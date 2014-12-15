@@ -1,4 +1,4 @@
 xmonad-xmobar-config
 ====================
 
-configuration files for xmobar and xmobar
+configuration files for xmonad and xmobar
