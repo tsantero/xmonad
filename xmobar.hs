@@ -7,7 +7,7 @@ Config {
    , borderColor =  "#646464"
    , sepChar =  "%"   
    , alignSep = "}{"  
-   , template = "%battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ %StdinReader% || %RJTT% | %date% "
+   , template = "%battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ %StdinReader% || %volume% | %date% "
    , lowerOnStart =     True    -- send to bottom of window stack on start
    , hideOnStart =      False   -- start with window unmapped (hidden)
    , allDesktops =      True    -- show on all desktops
@@ -15,12 +15,8 @@ Config {
    , pickBroadest =     False   -- choose widest display (multi-monitor)
    , persistent =       True    -- enable/disable hiding (True = disabled)
    , commands = 
-
-        -- weather monitor
-        [ Run Weather "RJTT" [ "--template", "<skyCondition> | 
-<fc=#4682B4><tempC></fc>°C | <fc=#4682B4><rh></fc>% | 
-<fc=#4682B4><pressure></fc>hPa"
-                             ] 36000
+        -- volume monitor
+        [ Run Com            "sh" ["/home/tsantero/.xmonad/volume.sh"] "volume" 10
 
         -- network monitor 
         , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
