@@ -16,11 +16,11 @@ Config {
    , persistent =       True    -- enable/disable hiding (True = disabled)
    , commands = 
         -- volume monitor
-        [ Run Com            "sh" ["~./.xmonad/volume.sh"] "volume" 10
+        [ Run Com            "sh" ["/home/tsantero/.xmonad/volume.sh"] "volume" 10
 
-        -- backlight brightness monitor
+        -- backlight brighness monitor
 
-        , Run Com            "sh" ["~/.xmonad/backlight.sh"] "brightness" 10
+        , Run Com            "sh" ["/home/tsantero/.xmonad/backlight.sh"] "brightness" 10
 
         -- network monitor 
         , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
