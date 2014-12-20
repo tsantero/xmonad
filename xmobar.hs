@@ -18,7 +18,7 @@ Config {
         -- volume monitor
         [ Run Com            "sh" ["/home/tsantero/.xmonad/volume.sh"] "volume" 10
 
-        -- backlight brighness monitor
+        -- backlight brightness monitor
 
         , Run Com            "sh" ["/home/tsantero/.xmonad/backlight.sh"] "brightness" 10
 
