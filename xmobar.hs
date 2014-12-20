@@ -1,5 +1,5 @@
 Config { 
-     font =         "xft:Bitstream Vera Sans Mono:size=9:bold:antialias=true"
+     font =         "Terminus:style=Regular:size=10"
    , bgColor =      "black"
    , fgColor =      "#646464"
    , position =     Top 
@@ -7,7 +7,7 @@ Config {
    , borderColor =  "#646464"
    , sepChar =  "%"   
    , alignSep = "}{"  
-   , template = "%battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ %StdinReader% || %volume% | %date% "
+   , template = "%battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% }{ %StdinReader% || %volume% | %brightness% | %date% "
    , lowerOnStart =     True    -- send to bottom of window stack on start
    , hideOnStart =      False   -- start with window unmapped (hidden)
    , allDesktops =      True    -- show on all desktops
@@ -16,7 +16,11 @@ Config {
    , persistent =       True    -- enable/disable hiding (True = disabled)
    , commands = 
         -- volume monitor
-        [ Run Com            "sh" ["/home/tsantero/.xmonad/volume.sh"] "volume" 10
+        [ Run Com            "sh" ["~./.xmonad/volume.sh"] "volume" 10
+
+        -- backlight brightness monitor
+
+        , Run Com            "sh" ["~/.xmonad/backlight.sh"] "brightness" 10
 
         -- network monitor 
         , Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"

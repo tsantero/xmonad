@@ -23,22 +23,19 @@ myTerminal = "/usr/bin/xterm -u8"
 ------------------------------------------------------------------------
 -- Workspaces
 
-myWorkspaces = ["1:web","2:chat","3:code", "4:media", "5:papers", "6:games"] ++ map show [6..9]
+myWorkspaces = map show [1..9]
 
 ------------------------------------------------------------------------
 -- Window rules
 
 myManageHook = composeAll
-    [ className =? "chromium"       --> doShift "1:web"
-    , className =? "hipchat"        --> doShift "2:chat"
-    , className =? "mumble"         --> doShift "2:chat"
-    , className =? "skype"          --> doShift "2:chat"
-    , className =? "Gimp"           --> doShift "4:media"
-    , className =? "vlc"            --> doShift "4:media"
-    , className =? "MPlayer"        --> doShift "4:media"
-    , className =? "Gummi"          --> doShift "5:papers"
-    , className =? "Evince"         --> doShift "5:papers"
-    , className =? "Steam"          --> doShift "6:games" 
+    [ className =? "chromium"       --> doShift "1"
+    , className =? "hipchat"        --> doShift "2"
+    , className =? "mumble"         --> doShift "2"
+    , className =? "skype"          --> doShift "2"
+    , className =? "Gimp"           --> doShift "4"
+    , className =? "vlc"            --> doShift "4"
+    , className =? "MPlayer"        --> doShift "4"
     , className =? "stalonetray"    --> doIgnore
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
